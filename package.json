@@ -1,0 +1,19 @@
+{
+  "name": "thingtalk-units",
+  "version": "0.1.0",
+  "description": "Unit conversions and definitions for ThingTalk",
+  "main": "index.js",
+  "repository": "https://github.com/stanford-oval/thingtalk-units",
+  "author": "Giovanni Campagna <gcampagn@cs.stanford.edu>",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "eslint": "^6.0.0",
+    "nyc": "^14.0.0"
+  },
+  "scripts": {
+    "lint": "eslint ./index.js",
+    "test": "nyc node ./test",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  }
+}
