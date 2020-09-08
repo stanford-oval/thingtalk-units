@@ -7,7 +7,7 @@
 // See LICENSE for details
 "use strict";
 
-exports.BaseUnits = ['ms', 'm', 'sqm', 'mps', 'kg', 'Pa', 'C', 'kcal', 'byte', 'W', 'lm', 'lx', 'dB', 'dBm'];
+exports.BaseUnits = ['ms', 'm', 'm2', 'mps', 'kg', 'Pa', 'C', 'kcal', 'byte', 'W', 'lm', 'lx', 'dB', 'dBm'];
 
 const UnitsToBaseUnit = {
     // time
@@ -28,13 +28,13 @@ const UnitsToBaseUnit = {
     'in': 'm',
     'ft': 'm',
     // area
-    'sqm': 'sqm',
-    'sqkm': 'sqm',
-    'sqmm': 'sqm',
-    'sqcm': 'sqm',
-    'sqmi': 'sqm',
-    'sqin': 'sqm',
-    'sqft': 'sqm',
+    'm2': 'm2',
+    'km2': 'm2',
+    'mm2': 'm2',
+    'cm2': 'm2',
+    'mi2': 'm2',
+    'in2': 'm2',
+    'ft2': 'm2',
     // speed
     'mps': 'mps', // meters per second, usually written as m/s but m/s is not an identifier
     'kmph': 'mps',
@@ -98,13 +98,13 @@ const UnitsTransformToBaseUnit = {
     'mi': 1609.344,
     'in': 0.0254,
     'ft': 0.3048,
-    'sqm': 1,
-    'sqkm': 1000 * 1000,
-    'sqmm': 1/1000/1000,
-    'sqcm': 1/100/100,
-    'sqmi': 1609.344 * 1609.344,
-    'sqin': 0.0254 * 0.0254,
-    'sqft': 0.3048 * 0.3048,
+    'm2': 1,
+    'km2': 1000 * 1000,
+    'mm2': 1/1000/1000,
+    'cm2': 1/100/100,
+    'mi2': 1609.344 * 1609.344,
+    'in2': 0.0254 * 0.0254,
+    'ft2': 0.3048 * 0.3048,
     'mps': 1,
     'kmph': 0.27777778,
     'mph': 0.44704,
