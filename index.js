@@ -7,7 +7,7 @@
 // See LICENSE for details
 "use strict";
 
-exports.BaseUnits = ['ms', 'm', 'm2', 'mps', 'kg', 'Pa', 'C', 'kcal', 'byte', 'W', 'lm', 'lx', 'dB', 'dBm'];
+exports.BaseUnits = ['ms', 'm', 'm2', 'm3', 'mps', 'kg', 'Pa', 'C', 'kcal', 'byte', 'W', 'lm', 'lx', 'dB', 'dBm'];
 
 const UnitsToBaseUnit = {
     // time
@@ -35,6 +35,28 @@ const UnitsToBaseUnit = {
     'mi2': 'm2',
     'in2': 'm2',
     'ft2': 'm2',
+    // volume
+    'm3': 'm3',
+    'km3': 'm3',
+    'mm3': 'm3',
+    'cm3': 'm3',
+    'mi3': 'm3',
+    'in3': 'm3',
+    'ft3': 'm3',
+    'gal': 'm3',
+    'galuk': 'm3',
+    'qt': 'm3',
+    'qtuk': 'm3',
+    'pint': 'm3',
+    'pintuk': 'm3',
+    'l': 'm3',
+    'hl': 'm3',
+    'cl': 'm3',
+    'ml': 'm3',
+    'tsp': 'm3',
+    'tbsp': 'm3',
+    'cup': 'm3',
+    'floz': 'm3',
     // speed
     'mps': 'mps', // meters per second, usually written as m/s but m/s is not an identifier
     'kmph': 'mps',
@@ -105,6 +127,27 @@ const UnitsTransformToBaseUnit = {
     'mi2': 1609.344 * 1609.344,
     'in2': 0.0254 * 0.0254,
     'ft2': 0.3048 * 0.3048,
+    'm3': 1,
+    'km3': 1000 * 1000 * 1000,
+    'mm3': 1/1000/1000/1000,
+    'cm3': 1/100/100/100,
+    'mi3': 1609.344 * 1609.344 * 1609.344,
+    'in3': 0.0254 * 0.0254 * 0.0254,
+    'ft3': 0.3048 * 0.3048 * 0.3048,
+    'gal': 0.00378541,
+    'galuk': 0.00454609,
+    'qt': 0.000946353,
+    'qtuk': 0.00113652,
+    'pint': 0.000473176,
+    'pintuk': 0.000568261,
+    'l': 0.001,
+    'hl': 0.1,
+    'cl': 0.00001,
+    'ml': 0.000001,
+    'tsp': 0.00000492892,
+    'tbsp': 0.0000147868,
+    'cup': 0.000236588,
+    'floz': 0.0000295735,
     'mps': 1,
     'kmph': 0.27777778,
     'mph': 0.44704,
