@@ -1,6 +1,6 @@
 {
   "name": "thingtalk-units",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Unit conversions and definitions for ThingTalk",
   "main": "index.js",
   "repository": "https://github.com/stanford-oval/thingtalk-units",
