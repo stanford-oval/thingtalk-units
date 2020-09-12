@@ -39,6 +39,8 @@ function main() {
     test(1, 'mon', 30, 'day');
     test(1, 'kg', 2.20462, 'lb');
     test(1, 'ft', 30.48, 'cm');
+    test(1, 'ft2', 929.0304, 'cm2');
+    test(1, 'ft3', 28316.846592, 'cm3');
     test(1, 'kW', 1000, 'W');
     test(1, 'W', 0.001, 'kW');
 
