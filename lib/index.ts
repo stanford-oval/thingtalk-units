@@ -1,15 +1,14 @@
-// -*- mode: js; indent-tabs-mode: nil; js-basic-offset: 4 -*-
+// -*- mode: ts; indent-tabs-mode: nil; js-basic-offset: 4 -*-
 //
 // Copyright 2015-2019 The Board of Trustees of the Leland Stanford Junior University
 //
 // Author: Giovanni Campagna <gcampagn@cs.stanford.edu>
 //
 // See LICENSE for details
-"use strict";
 
-exports.BaseUnits = ['ms', 'm', 'm2', 'm3', 'mps', 'kg', 'Pa', 'C', 'kcal', 'byte', 'W', 'lm', 'lx', 'dB', 'dBm'];
+export const BaseUnits = ['ms', 'm', 'm2', 'm3', 'mps', 'kg', 'Pa', 'C', 'kcal', 'byte', 'W', 'lm', 'lx', 'dB', 'dBm'];
 
-const UnitsToBaseUnit = {
+const UnitsToBaseUnit : { [key : string]: string } = {
     // time
     'ms': 'ms', // base unit for time is milliseconds, because +new Date gives milliseconds
     's': 'ms',
@@ -104,7 +103,7 @@ const UnitsToBaseUnit = {
     'dBm': 'dBm'
 };
 
-const UnitsTransformToBaseUnit = {
+const UnitsTransformToBaseUnit : { [key : string] : (number|((x : number) => number)) } = {
     'ms': 1,
     's': 1000,
     'min': 60 * 1000,
@@ -184,32 +183,32 @@ const UnitsTransformToBaseUnit = {
     'dBm': 1
 };
 
-const UnitsInverseTransformFromBaseUnit = {
+const UnitsInverseTransformFromBaseUnit : { [key : string] : ((x : number) => number) } = {
     'F': function(x) { return x*1.8 + 32; },
     'K': function(x) { return x + 273.15; }
 };
 
-exports.transformToBaseUnit = function(value, unit) {
-    var transform = UnitsTransformToBaseUnit[unit];
+export function transformToBaseUnit(value : number, unit : string) : number {
+    const transform = UnitsTransformToBaseUnit[unit];
     if (typeof transform === 'function')
         return transform(value);
     else
         return value * transform;
-};
+}
 
-exports.transformFromBaseUnit = function(value, unit) {
-    var coeff = UnitsTransformToBaseUnit[unit];
+export function transformFromBaseUnit(value : number, unit : string) : number {
+    const coeff = UnitsTransformToBaseUnit[unit];
     if (typeof coeff === 'function')
         return UnitsInverseTransformFromBaseUnit[unit](value);
     else
         return ((1/coeff)*value);
-};
+}
 
-exports.normalizeUnit = function(unit) {
+export function normalizeUnit(unit : string) : string {
     if (unit === '')
         return '';
-    var baseunit = UnitsToBaseUnit[unit];
+    const baseunit = UnitsToBaseUnit[unit];
     if (baseunit === undefined)
         throw new TypeError('Invalid unit ' + unit);
     return baseunit;
-};
+}
