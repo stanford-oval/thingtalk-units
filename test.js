@@ -10,7 +10,7 @@
 // Unit Tests! Cause I'm testing units! Get it? Get it?
 
 const assert = require('assert');
-const TTUnits = require('.');
+const TTUnits = require('./lib/index');
 
 function test(v1, u1, v2, u2) {
     assert.strictEqual(TTUnits.normalizeUnit(u1),
