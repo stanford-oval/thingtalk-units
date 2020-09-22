@@ -1,11 +1,11 @@
 {
   "name": "thingtalk-units",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Unit conversions and definitions for ThingTalk",
   "repository": "https://github.com/stanford-oval/thingtalk-units",
   "author": "Giovanni Campagna <gcampagn@cs.stanford.edu>",
   "license": "BSD-3-Clause",
-  "main": "index.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
