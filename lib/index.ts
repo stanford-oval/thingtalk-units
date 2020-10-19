@@ -26,6 +26,7 @@ const UnitsToBaseUnit : { [key : string]: string } = {
     'mi': 'm',
     'in': 'm',
     'ft': 'm',
+    'ly': 'm', // light-year
     // area
     'm2': 'm2',
     'km2': 'm2',
@@ -119,6 +120,7 @@ const UnitsTransformToBaseUnit : { [key : string] : (number|((x : number) => num
     'mi': 1609.344,
     'in': 0.0254,
     'ft': 0.3048,
+    'ly': 9.4607 * 1e15,
     'm2': 1,
     'km2': 1000 * 1000,
     'mm2': 1/1000/1000,
