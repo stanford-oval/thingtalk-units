@@ -18,6 +18,7 @@ const UnitsToBaseUnit : { [key : string]: string } = {
     'week': 'ms',
     'mon': 'ms', // business month, aka exactly 30 days
     'year': 'ms', // business year (365 days exactly, no leap years)
+    'century': 'ms', // hundred years
     // length
     'm': 'm',
     'km': 'm',
@@ -113,6 +114,7 @@ const UnitsTransformToBaseUnit : { [key : string] : (number|((x : number) => num
     'week': 86400 * 7 * 1000,
     'mon': 86400 * 30 * 1000,
     'year': 86400 * 365 * 1000,
+    'century': 100 * 86400 * 365 * 1000,
     'm': 1,
     'km': 1000,
     'mm': 1/1000,
