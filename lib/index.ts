@@ -18,6 +18,8 @@ const UnitsToBaseUnit : { [key : string]: string } = {
     'week': 'ms',
     'mon': 'ms', // business month, aka exactly 30 days
     'year': 'ms', // business year (365 days exactly, no leap years)
+    'decade': 'ms',
+    'century': 'ms', // hundred years
     // length
     'm': 'm',
     'km': 'm',
@@ -26,6 +28,7 @@ const UnitsToBaseUnit : { [key : string]: string } = {
     'mi': 'm',
     'in': 'm',
     'ft': 'm',
+    'ly': 'm', // light-year
     // area
     'm2': 'm2',
     'km2': 'm2',
@@ -112,6 +115,8 @@ const UnitsTransformToBaseUnit : { [key : string] : (number|((x : number) => num
     'week': 86400 * 7 * 1000,
     'mon': 86400 * 30 * 1000,
     'year': 86400 * 365 * 1000,
+    'decade': 10 * 86400 * 365 * 1000, 
+    'century': 100 * 86400 * 365 * 1000,
     'm': 1,
     'km': 1000,
     'mm': 1/1000,
@@ -119,6 +124,7 @@ const UnitsTransformToBaseUnit : { [key : string] : (number|((x : number) => num
     'mi': 1609.344,
     'in': 0.0254,
     'ft': 0.3048,
+    'ly': 9.4607 * 1e15,
     'm2': 1,
     'km2': 1000 * 1000,
     'mm2': 1/1000/1000,
